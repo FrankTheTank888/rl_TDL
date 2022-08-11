@@ -25,7 +25,7 @@ class Agent():
         if np.random.random() < self.epsilon:
             action = np.random.choice([i for i in range(self.n_actions)])
         else:
-            actions = np.array(self.Q[(state, a)] for a in range(self.n_actions))
+            actions = np.array([self.Q[(state, a)] for a in range(self.n_actions)]) #...hier zweite eckige
             action = np.argmax(actions)
         return action
 
